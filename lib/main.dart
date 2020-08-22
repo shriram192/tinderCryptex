@@ -36,6 +36,14 @@ class _SwipePageState extends State<SwipePage> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(
+            Icons.account_box,
+            size: 40,
+            color: Colors.redAccent,
+          ),
+          onPressed: null,
+        ),
         centerTitle: true,
         backgroundColor: Colors.white,
         title: Container(
@@ -46,14 +54,23 @@ class _SwipePageState extends State<SwipePage> {
               image: DecorationImage(
                   image: AssetImage('assets/tinder.png'), fit: BoxFit.contain)),
         ),
+        actions: <Widget>[
+          IconButton(
+              icon: Icon(
+                Icons.chat,
+                size: 40,
+                color: Colors.redAccent
+              ),
+              onPressed: null)
+        ],
       ),
       body: PageView(
         scrollDirection: Axis.horizontal,
         controller: controller,
         children: <Widget>[
-          swipeleft(deviceSize),
+          swiperight(deviceSize),
           swipepage(deviceSize),
-          swiperight(deviceSize)
+          swipeleft(deviceSize)
         ],
       ),
     );
@@ -125,7 +142,7 @@ class _SwipePageState extends State<SwipePage> {
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
                       image: DecorationImage(
-                          image: AssetImage('assets/rachit.jpeg'),
+                          image: AssetImage('assets/xyz.jpeg'),
                           colorFilter: ColorFilter.linearToSrgbGamma(),
                           fit: BoxFit.fill)),
                 ),
@@ -136,7 +153,7 @@ class _SwipePageState extends State<SwipePage> {
                     elevation: 8.0,
                     color: Colors.transparent,
                     child: Text(
-                      'Rachit, 20',
+                      'Rachit, 19',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                           color: Colors.white,
